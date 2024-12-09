@@ -37,3 +37,9 @@ class Pokemon {
         this.level = level;
     }
 }
+
+function initialize() {
+
+}
+
+initialize();
