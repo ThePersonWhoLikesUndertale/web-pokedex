@@ -1,2 +1,2 @@
 # web-pokedex
-Uma pokedex pública que mostra todos os pokemons da geração mais recente.
+Uma pokedex que mostra todos os pokemons da geração mais recente.
