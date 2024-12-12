@@ -1,45 +1,37 @@
-class Pokemon {
-    nationalNumber;
-    pokeType;
-    pokeSpecies;
-    height;
-    weight;
-    abilities;
-    ev;
-    catchRate;
-    baseFriendship;
-    baseXP;
-    growthRate;
-    /*
-    Order of stats:
-    1. HP (hp)
-    2. Defense (def)
-    3. Special Attack (spAtk)
-    4. Special Defense (spDef)
-    5. Speed (speed)
-    */
-    stats;
-    level;
+function convertPokemonToLI(pokemon) {
+    return `
+        <li class="pokemon">
+            <span class="number">#001</span>
+            <span class="name">${pokemon.name}</span>
 
-    constructor(nationalNumber, pokeType, pokeSpecies, height, weight, abilities, ev, catchRate, friendship, xp, growthRate, stats, level) {
-        this.nationalNumber = nationalNumber;
-        this.pokeType = pokeType;
-        this.pokeSpecies = pokeSpecies;
-        this.height = height;
-        this.weight = weight;
-        this.abilities = abilities;
-        this.ev = ev;
-        this.catchRate = catchRate;
-        this.baseFriendship = friendship;
-        this.baseXP = xp;
-        this.growthRate = growthRate;
-        this.stats = stats;
-        this.level = level;
-    }
+            <div class="detail">
+                <ul class="types">
+                    <li class="type">Grass</li>
+                    <li class="type">Poison</li>
+                </ul>
+
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="${pokemon.name}">
+            </div>
+        </li>
+    `;
 }
 
 function initialize() {
+    const offset = 9;
+    const limit = 3;
+    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+    const pokemonList = document.getElementById("pokemonList");
 
+    fetch(url)
+        .then((response) => response.json())
+        .then((jsonBody) => jsonBody.results)
+        .then((pokedex) => {
+            for (let i = 0; i < pokedex.length; i++) {
+                const pokemon = pokedex[i];
+                pokemonList.innerHTML += convertPokemonToLI(pokemon);
+            }
+        })
+        .catch((error) => console.error(error));
 }
 
 initialize();
