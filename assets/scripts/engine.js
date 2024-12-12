@@ -1,5 +1,5 @@
 function convertPokemonToLI(pokemon) {
-    return `
+  return `
         <li class="pokemon">
             <span class="number">#001</span>
             <span class="name">${pokemon.name}</span>
@@ -17,21 +17,14 @@ function convertPokemonToLI(pokemon) {
 }
 
 function initialize() {
-    const offset = 9;
-    const limit = 3;
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-    const pokemonList = document.getElementById("pokemonList");
+  const pokemonList = document.getElementById("pokemonList");
 
-    fetch(url)
-        .then((response) => response.json())
-        .then((jsonBody) => jsonBody.results)
-        .then((pokedex) => {
-            for (let i = 0; i < pokedex.length; i++) {
-                const pokemon = pokedex[i];
-                pokemonList.innerHTML += convertPokemonToLI(pokemon);
-            }
-        })
-        .catch((error) => console.error(error));
+  pokeApi
+    .getPokemons()
+    .then((pokedex) => {
+      pokemonList.innerHTML += pokedex.map(convertPokemonToLI).join("");
+    })
+    .catch((error) => console.error(error));
 }
 
 initialize();
