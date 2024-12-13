@@ -27,7 +27,7 @@ function loadPokemonItens(offset, limit) {
 }
 
 function initialize() {
-  const limit = 9;
+  const limit = 10;
   let offset = 0;
 
   // Mostra apenas as 2 primeiras gerações
