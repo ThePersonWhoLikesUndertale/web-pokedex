@@ -22,7 +22,7 @@ function initialize() {
   pokeApi
     .getPokemons()
     .then((pokedex) => {
-      pokemonList.innerHTML += pokedex.map(convertPokemonToLI).join("");
+      pokemonList.innerHTML = pokedex.map(convertPokemonToLI).join("");
     })
     .catch((error) => console.error(error));
 }
