@@ -30,11 +30,23 @@ function initialize() {
   const limit = 9;
   let offset = 0;
 
+  // Mostra apenas as 2 primeiras gerações
+  const maxRecord = 251;
+
   loadPokemonItens(offset, limit);
 
   loadMoreButton.addEventListener("click", () => {
     offset += limit;
-    loadPokemonItens(offset, limit);
+    const qtdRecordNextPage = offset+limit;
+
+    if (qtdRecordNextPage >= maxRecord) {
+      const newLimit = maxRecord - offset;
+      loadPokemonItens(offset, newLimit);
+
+      loadMoreButton.parentElement.removeChild(loadMoreButton);
+    } else {
+      loadPokemonItens(offset, limit);
+    }
   });
 }
 
