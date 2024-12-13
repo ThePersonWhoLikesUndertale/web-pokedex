@@ -3,7 +3,7 @@ Uma pokedex que mostra todos os pokemons da 1ª e 2ª gerações.
 
 ## Features
 - A lista mostra 10 pokemons por vez.
-- Os pokemons são ordenados por número e são mostratos em quadrados individuais com as cores dos seus tipos primários.
+- Os pokemons são ordenados por número e são mostrados em quadrados individuais com as cores dos seus tipos primários.
 - Cada quadrado mostra: Número do pokemon, nome do pokemon, tipo(s) do pokemon e uma foto do pokemon.
 - Botão "Load More" que carrega +10 pokemons na lista.
 
