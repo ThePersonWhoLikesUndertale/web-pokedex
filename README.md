@@ -1,5 +1,5 @@
 # web-pokedex
-Uma pokedex que mostra todos os pokemons da 1ª e 2ª geração.
+Uma pokedex que mostra todos os pokemons da 1ª e 2ª gerações.
 
 ## Features
 - A lista mostra 10 pokemons por vez.
