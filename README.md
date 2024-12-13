@@ -9,6 +9,7 @@ Uma pokedex que mostra todos os pokemons da 1ª e 2ª gerações.
 
 ## TODO
 Coisas que pretendo implementar após a conclusão do código inicial.
+- [ ] Detalhes de pokemon (Mostrar detalhes do pokemon selecionado)
 - [ ] Seletor de geração (Escolher uma geração específica para ser mostrada)
 - [ ] Seletor de gerações (Escolher 1 ou mais gerações para serem mostradas)
 - [ ] Ordenador (Permite escolher a forma de ordernar a lista de pokemons)
