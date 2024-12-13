@@ -112,6 +112,7 @@ main {
 .pokemon .name {
     color: white;
     margin-bottom: 0;
+    text-transform: capitalize;
 }
 
 .pokemon .detail {
@@ -135,6 +136,7 @@ main {
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
+    text-transform: capitalize;
 }
 
 .pokemon .detail img {
